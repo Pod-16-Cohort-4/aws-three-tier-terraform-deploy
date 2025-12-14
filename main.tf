@@ -34,7 +34,7 @@ module "eks-deployment" {
   
 }
 
-module "route 53-hosted-zone-deployment" {
+module "r53-hosted-zone" {
     source = "./module-dns"
     environment = var.environment
     domain-name = var.domain-name
