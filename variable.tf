@@ -52,7 +52,7 @@ variable "min_size" {
 variable "instance_types" {
   description = "Instance types for the EKS node group"
   type        = list(string)
-  default     = ["t2.micro"]    
+  default     = ["t3.medium"]    
 } 
 
 variable "capacity_type" {
@@ -63,12 +63,12 @@ variable "capacity_type" {
 variable "eks_version" {
   description = "EKS cluster version"
   type        = string
-  default     = "1.32"
+  default     = "1.34"
 }
 variable "ami_type" {
   description = "AMI type for the EKS node group"
   type        = string
-  default     = "AL2_x86_64" # Use AL2_x86_64 for x86 instances, AL2_ARM_64 for ARM instances
+  default     = "AL2023_x86_64_STANDARD" # Use AL2_x86_64 for x86 instances, AL2_ARM_64 for ARM instances
 }
 
 variable "label_one" {
@@ -80,34 +80,13 @@ variable "label_one" {
 variable "zone_name" {
   description = "Name of the DNS zone"
   type        = string
-  default     = "example.com"
+  default     = "pod16cohort4.online"
 }
 
 variable "domain-name" {
   description = "Domain name to be created"
   type        = string
-  default     = "myapp.example.com"
-}
-
-variable "namecheap_api_user" {
-  description = "Namecheap API user"
-  type        = string
-  default     = "smartobi"
-}
-variable "namecheap_api_key" {
-  description = "Namecheap API key"
-  type        = string
-  default     = "a3ca57241b794d44b0fc3387ca9b62a9"
-}
-variable "namecheap_username" {
-  description = "Namecheap username"
-  type        = string
-  default     = "smartobi"
-}
-variable "namecheap_client_ip" {
-  description = "Client IP for Namecheap API access"
-  type        = string
-  default     = "3.101.24.8" # Replace with your actual client IP
+  default     = "pod16cohort4.online"
 }
 
 #===========
@@ -115,7 +94,7 @@ variable "namecheap_client_ip" {
 variable "db_instance_class" {
   description = "Instance class for the RDS database"
   type        = string
-  default     = "db.t3.micro" 
+  default     = "db.t3.medium" 
 }
 
 variable "db_allocated_storage" {
@@ -164,5 +143,5 @@ variable "repository_name" {
 variable "email" {
   description = "Email address for notifications and certificates"
   type        = string
-  default     = "support@digitalwitchng.online"
+  default     = "pod16.cohort4@gmail.com"
 }
